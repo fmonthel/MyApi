@@ -11,10 +11,11 @@ On MACOS :
 
 On Linux :
 
+    cp rest_api/settings.py.tpl rest_api/settings.py
     pip install virtualenv
     virtualenv venv
     source venv/bin/activate
-    cp rest_api/settings.py.tpl rest_api/settings.py
+    pip install -r requirements.txt
     export PYTHONPATH=.:$PYTHONPATH
     python rest_api/app.py
 
