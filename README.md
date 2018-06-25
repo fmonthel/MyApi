@@ -11,6 +11,8 @@ On MACOS :
 
 On Linux :
 
+    pip install virtualenv
+    virtualenv venv
     source venv/bin/activate
     cp rest_api/settings.py.tpl rest_api/settings.py
     export PYTHONPATH=.:$PYTHONPATH
