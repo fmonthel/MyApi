@@ -1,7 +1,7 @@
 import logging
 import json
-
 from flask import request
+from flask_jwt_extended import jwt_required
 from flask_restplus import Resource
 from rest_api.api.billing.business import create_contract, update_contract, delete_contract
 from rest_api.api.billing.serializers import contract
@@ -16,6 +16,8 @@ ns = api.namespace('billing/contract', description='Operations related to contra
 class ContractCollection(Resource) :
 
     @api.marshal_list_with(contract)
+    #@jwt_required
+    #@api.doc(security='Bearer')
     def get(self) :
         """
         Returns list of contracts

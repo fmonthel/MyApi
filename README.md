@@ -5,6 +5,7 @@ Flox-arts.net API
 On MACOS :
 
     cp rest_api/settings.py.tpl rest_api/settings.py
+    sudo pip install -r requirements.txt --upgrade
     export PYTHONPATH=.:$PYTHONPATH
     python rest_api/app.py
 
@@ -15,7 +16,7 @@ On Linux :
     pip install virtualenv
     virtualenv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install -r requirements.txt --upgrade
     export PYTHONPATH=.:$PYTHONPATH
     python rest_api/app.py
 

@@ -22,7 +22,6 @@ def update_contract(contract_id, data):
     customer_id = data.get('customer_id')
     contract.customer = Customer.query.filter(Customer.id == customer_id).one()
     contract.monae_quote = data.get('monae_quote')
-    print data.get('monae_quote')
     contract.monae_invoice = data.get('monae_invoice')
     contract.startdate = data.get('startdate')
     contract.enddate = data.get('enddate')

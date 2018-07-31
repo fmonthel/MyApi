@@ -1,6 +1,11 @@
 from flask_restplus import fields
 from rest_api.api.restplus import api
 
+user = api.model('User', {
+    'username': fields.String(required=True, attribute='username', description='User name'),
+    'password': fields.String(required=True, attribute='password', description='Password'),
+})
+
 customer = api.model('Customer', {
     'id': fields.Integer(readOnly=True, attribute='id', description='The unique identifier of the customer'),
     'monae_customer': fields.Integer(required=False, attribute='monae_customer', description='Customer ID from MonAE application'),
@@ -9,7 +14,7 @@ customer = api.model('Customer', {
 
 contract = api.model('Contract', {
     'id': fields.Integer(readOnly=True, attribute='id', description='The unique identifier of a contract'),
-    'flag': fields.String(required=True, attribute='flag', description='Flag of the contract'),
+    'flag': fields.String(required=True, attribute='flag', description='Flag of the contract', enum=['waiting', 'paid', 'end']),
 	'startdate': fields.Date(attribute='startdate', description='Start date of the contract'),
 	'enddate': fields.Date(attribute='enddate', description='End date of the contract'),
 	'monae_quote': fields.Integer(required=False, attribute='monae_quote', description='Quote ID from MonAE application'),
