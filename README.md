@@ -13,12 +13,11 @@ On MACOS :
 On Linux :
 
     cp rest_api/settings.py.tpl rest_api/settings.py
-    pip install virtualenv
-    virtualenv venv
+    python3 -m venv venv
     source venv/bin/activate
-    pip install -r requirements.txt --upgrade
+    pip3 install -r requirements.txt --upgrade
     export PYTHONPATH=.:$PYTHONPATH
-    python rest_api/app.py
+    python3 rest_api/app.py
 
 This repository contains boilerplate code for a RESTful API based on Flask and Flask-RESTPlus.
 
